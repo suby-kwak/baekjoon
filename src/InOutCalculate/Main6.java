@@ -1,6 +1,8 @@
+package InOutCalculate;
+
 import java.util.Scanner;
 
-public class Main4 {
+public class Main6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -11,12 +13,15 @@ public class Main4 {
         }
 
         int B = scanner.nextInt();
-        while (B > 10) {
+        while (B >= 10000) {
             System.out.println("B를 다시 입력하시오");
             B = scanner.nextInt();
         }
 
+        System.out.println(A + B);
+        System.out.println(A - B);
         System.out.println(A * B);
+        System.out.println(A / B);
+        System.out.println(A % B);
     }
 }
-

@@ -1,3 +1,5 @@
+package InOutCalculate;
+
 import java.util.Scanner;
 
 public class Main8 {

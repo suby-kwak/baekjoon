@@ -1,6 +1,8 @@
+package InOutCalculate;
+
 import java.util.Scanner;
 
-public class Main3 {
+public class Main2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +18,7 @@ public class Main3 {
             B = scanner.nextInt();
         }
 
-        System.out.println(A - B);
+        System.out.println(A + B);
 
     }
 

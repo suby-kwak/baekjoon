@@ -1,3 +1,5 @@
+package InOutCalculate;
+
 public class Main13 {
     public static void main(String[] args) {
         System.out.println("|\\_/|");

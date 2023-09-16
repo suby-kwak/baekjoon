@@ -21,11 +21,10 @@ public class Main1 {
 
     }
 
-    public static int check(int num) {
+    public static void check(int num) {
         if (num < -10000 || num > 100000) {
             num = scanner.nextInt();
         }
 
-        return num;
     }
 }

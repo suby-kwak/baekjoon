@@ -25,6 +25,5 @@ public class Main1 {
         if (num < -10000 || num > 100000) {
             num = scanner.nextInt();
         }
-
     }
 }

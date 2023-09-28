@@ -26,8 +26,8 @@ public class Main4 {
             aList.add(a * b);
         }
 
-        for (int i = 0; i < aList.size(); i++) {
-            result += aList.get(i);
+        for (Integer integer : aList) {
+            result += integer;
         }
 
         if (X == result) {

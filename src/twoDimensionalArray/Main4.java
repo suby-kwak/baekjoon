@@ -12,7 +12,6 @@ public class Main4 {
         int N = Integer.parseInt(reader.readLine());
         int result = 0;
 
-
         boolean[][] list = new boolean[100][100];
 
         for (int i = 0; i < N; i++) {

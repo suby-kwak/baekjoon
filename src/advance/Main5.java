@@ -2,7 +2,6 @@ package advance;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,9 +12,9 @@ public class Main5 {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
         String str = reader.readLine().toUpperCase();
-        List<String> s = Arrays.asList(str.split(""));
 
-        Map<String, Long> collect = s.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<String, Long> collect = Arrays.stream(str.split(""))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         long check = 0;
         String result = null;
@@ -32,6 +31,5 @@ public class Main5 {
         writer.write(result + "\n");
         writer.close();
         reader.close();
-
     }
 }

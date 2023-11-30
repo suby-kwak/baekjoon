@@ -11,9 +11,9 @@ public class Main7 {
         int n0 = sc.nextInt();
 
         int fn = a1 * n0 + a0;
-        int check = c * n0;
+        int gn = c * n0;
 
-        if (fn <= check) {
+        if (fn <= gn && a1 <= c) {
             System.out.println(1);
         } else {
             System.out.println(0);

@@ -1,57 +1,52 @@
 package diviMulti2;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main8 {
-    static List<Integer> list;
+    static Set<Integer> list;
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(reader.readLine());
-        int[] answer = new int[T];
-        for (int i = 0; i < T; i++) {
+        List<Integer> answer = new ArrayList<>();
+
+        for(int i=0; i<T; i++) {
             int num = Integer.parseInt(reader.readLine());
-            list = new ArrayList<>();
-            isPrime2(num);
             int cnt = 0;
+            list = new HashSet<>();
+            Set<Integer> repeat = new HashSet<>();
+            isPrime(num);
             for (int prime : list) {
-                if (isPrime(num - prime)) {
-                    cnt++;
+                if(!repeat.contains(prime)) {
+                    if (list.contains(num - prime)) {
+                        cnt++;
+                        repeat.add(num - prime);
+                    }
                 }
             }
-            answer[i] = cnt;
+            answer.add(cnt);
         }
 
-        for (int i : answer) {
-            writer.write(i + "\n");
+        for (int cnt : answer) {
+            writer.write(cnt + "\n");
         }
         writer.close();
         reader.close();
     }
 
-    private static boolean isPrime(int num) {
-        if (num == 2) {
-            return true;
-        } else if (num > 2) {
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                    return false;
-                }
-            }
-            return true;
+    private static void isPrime(int num) {
+        if (num < 2) {
+            return;
         }
-        return false;
-    }
 
-    private static void isPrime2(int num) {
-        boolean[] chk = new boolean[num / 2 + 1];
+        boolean[] chk = new boolean[num + 1];
         chk[0] = chk[1] = true;
-
         for (int i = 2; i <= Math.sqrt(num); i++) {
-            if(chk[i]) continue;
+            if (chk[i]) {
+                continue;
+            }
             for (int j = i * i; j < chk.length; j += i) {
                 chk[j] = true;
             }
@@ -60,5 +55,7 @@ public class Main8 {
         for (int i = 0; i < chk.length; i++) {
             if(!chk[i]) list.add(i);
         }
+
+
     }
 }

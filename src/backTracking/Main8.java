@@ -46,7 +46,7 @@ public class Main8 {
 
         for (int a = i; a < N - index; a++) {
             list.add(a);
-            backTrack(a, index - 1);
+            backTrack(a + 1, index - 1);
             list.remove((Integer) a);
         }
     }

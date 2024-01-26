@@ -28,6 +28,9 @@ public class Main11 {
             }
         }
 
+        for (int i : max) {
+            System.out.println(i);
+        }
         writer.write(max[N - 1] + "\n");
         writer.close();
     }
